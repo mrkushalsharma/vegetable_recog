@@ -7,7 +7,7 @@ import random
 from glob import glob
 from keras import preprocessing
 
-class_names = ['BANANA', 'RED APPLE', 'PEAR', 'GREEN APPLE']
+class_names = ['BANANA', 'APPLE', 'ORANGE', 'CARROT']
 
 # get the reference to the webcam
 camera = cv2.VideoCapture(0)
