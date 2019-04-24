@@ -60,6 +60,38 @@ while (True):
 camera.release()
 cv2.destroyAllWindows()
 
+#for croppig images
+save_width = 400
+save_height = 400
+
+for i in range(1, 5):
+    name = '/home/mrkushalsharma/Desktop/data/images_type_{}'.format(i)
+    os.makedirs(name, exist_ok=True)
+
+#saving images in local directory
+for i, frame in enumerate(raw_frames_type_1):
+    roi = frame[75 + 2:425 - 2, 300 + 2:650 - 2]
+    roi = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
+    roi = cv2.resize(roi, (save_width, save_height))
+    cv2.imwrite('/home/mrkushalsharma/Desktop/data/images_type_1/{}.png'.format(i), cv2.cvtColor(roi, cv2.COLOR_BGR2RGB))
+
+for i, frame in enumerate(raw_frames_type_2):
+    roi = frame[75 + 2:425 - 2, 300 + 2:650 - 2]
+    roi = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
+    roi = cv2.resize(roi, (save_width, save_height))
+    cv2.imwrite('/home/mrkushalsharma/Desktop/data/images_type_2/{}.png'.format(i), cv2.cvtColor(roi, cv2.COLOR_BGR2RGB))
+
+for i, frame in enumerate(raw_frames_type_3):
+    roi = frame[75 + 2:425 - 2, 300 + 2:650 - 2]
+    roi = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
+    roi = cv2.resize(roi, (save_width, save_height))
+    cv2.imwrite('/home/mrkushalsharma/Desktop/data/images_type_3/{}.png'.format(i), cv2.cvtColor(roi, cv2.COLOR_BGR2RGB))
+
+for i, frame in enumerate(raw_frames_type_4):
+    roi = frame[75 + 2:425 - 2, 300 + 2:650 - 2]
+    roi = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
+    roi = cv2.resize(roi, (save_width, save_height))
+    cv2.imwrite('/home/mrkushalsharma/Desktop/data/images_type_4/{}.png'.format(i), cv2.cvtColor(roi, cv2.COLOR_BGR2RGB))
 
 
     #/home/mrkushalsharma/Desktop/data/images_type_2/{}.png'
